@@ -9,7 +9,7 @@
 }
 #prezzi {
     padding: 2em 5em 2em;
-    align-items: center;
+    text-align: center;
 }
 .parallelogramma {
         width:200px;
@@ -19,7 +19,7 @@
 .rettangolo-allungato {
     width: 200px;
     height: 400px;
-    background-color: rgb(156, 148, 148);
+    background-color: rgb(182, 182, 182);
 }
 
 @media screen and (min-width: 1024px) {
@@ -30,29 +30,5 @@
         text-align: center;
         justify-content:space-between;
         flex-wrap: nowrap;
-    }
-    .flex-item-center-prezzi {
-        display: flex;
-        justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
-    .flex-item.left-prezzi {
-        display: flex;
-        justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
-    .flex-item.right-prezzi {
-        display: flex;
-        justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
-        flex-grow: 0;
-        flex-shrink: 0;
     }
 }

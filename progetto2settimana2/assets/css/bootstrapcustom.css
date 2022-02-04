@@ -53,33 +53,19 @@ button {
 #copyright {
     text-align: center;
 }
+footer i {
+    border: black 1px solid;
+    border-radius: 5%;
+    padding: 0.3em;
+}
 @media screen and (min-width: 1024px) {
     
     #box-1 {
         flex-direction: row;
         display: flex;
         text-align: center;
-    }
-    .flex-item-center {
-        text-align: center;
-        display: flex;
         justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
-    }
-    .flex-item.left {
-        text-align: left;
-        display: flex;
-        justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
-    }
-    .flex-item.right {
-        text-align: right;
-        display: flex;
-        justify-content:space-between;
-        flex-direction: column;
-        flex-basis: 30%;
+        flex-wrap: nowrap;
     }
     #box-2 {
         flex-direction: row;
@@ -106,6 +92,7 @@ button {
         text-align: center;
         padding-bottom: 2em;
         justify-content: space-between;
+        flex-wrap: nowrap;
     }
     .flex-item-center-3 {
         text-align: center;
@@ -137,5 +124,6 @@ button {
         text-align: left;
         flex-direction: row;
         justify-content: space-between;
+        align-items: baseline;
     }
 }
