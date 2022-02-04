@@ -1,0 +1,57 @@
+.mt-5 {
+    text-align: center;
+}
+.card {
+    border: none;
+}
+.senza-bordi {
+    border: none;
+}
+#prezzi {
+    padding: 2em 5em 2em;
+    align-items: center;
+}
+.parallelogramma {
+        width:200px;
+        height:150px;
+        transform:skew(-30deg);
+}
+.rettangolo-allungato {
+    width: 200px;
+    height: 400px;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    #prezzi {
+        flex-direction: row;
+        display: flex;
+        text-align: center;
+        justify-content:space-between;
+        flex-wrap: nowrap;
+    }
+    .flex-item-center-prezzi {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        flex-basis: 30%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .flex-item.left-prezzi {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        flex-basis: 30%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .flex-item.right-prezzi {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        flex-basis: 30%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
