@@ -1,0 +1,38 @@
+main {
+    padding: 1em 5em;
+}
+#testo, .card-text {
+    color: grey;
+}
+.rettangolo-allungato ul {
+    color: grey;
+}
+.mt-5 {
+    text-align: center;
+}
+.card {
+    border: none;
+}
+.senza-bordi {
+    border: none;
+}
+#prezzi {
+    padding: 2em 5em 2em;
+    text-align: center;
+}
+.parallelogramma {
+    transform:skew(-15deg);
+    height: 150px;
+}
+.rettangolo-allungato {
+    background-color: rgb(233, 232, 232);
+    align-content: space-between;
+    height: 25em;
+}
+.card-footer {
+    border: none;
+    background-color: rgb(233, 232, 232);
+}
+.list-unstyled {
+    text-align: left;
+}
