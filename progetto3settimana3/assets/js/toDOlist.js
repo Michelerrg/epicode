@@ -1,26 +1,14 @@
-/*
-var aggiungi_elemento = document.getElementById("button");
-        aggiungi_elemento.addEventListener("click", stampa_lista);
-        function stampa_lista() {
-            var lista = document.getElementById("lista");
-            var contenuto = document.getElementById("testo_inserito").value;     
-            lista.innerHTML += "<li class='list-group-item'>" + contenuto + "</li>";
-            localStorage.setItem('contenuto', contenuto);
-            console.localStorage.getItem('contenuto'. contenuto).split(",");
-        }
-        */
-
-var button;
+var pulsante;
 var testoInserito;
 var scriviLista;
 var contenutoLista = [];
 
 window.addEventListener("load", init);
 function init() {
-    button = document.querySelector("#button");
+    pulsante = document.querySelector("#pulsante");
     testoInserito = document.querySelector("#testo_inserito");
     scriviLista = document.querySelector("#scrivi_lista");
-    button.addEventListener("click", addTask);
+    pulsante.addEventListener("click", addTask);
 }
 
 function addTask() {
@@ -32,7 +20,7 @@ function addTask() {
 function buildList() {
     var lista = "";
     for (var i = 0; i < contenutoLista.length; i++) {
-        lista += "<li class='list-group-item '>" + contenutoLista[i] + "<span class='btn-close float-end';'></span>" + "</li>";
+        lista += "<li class='list-group-item '>" + contenutoLista[i] + "<button onclick='chiudiLista('+i+')' class='btn-close float-end bg-danger text-light'></button>" + "</li>";
     }
     scriviLista.innerHTML = lista;
     localStorage.setItem("contenutoLista", contenutoLista);
@@ -42,3 +30,12 @@ function buildList() {
 function clearForms() {
     testoInserito.value = '';
 }
+
+function chiudiLista(i) {
+    contenutoLista.splice(i, 1);
+    buildList();
+    localStorage.setItem("contenutoLista", contenutoLista);
+}
+
+
+
