@@ -9,6 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>My Player</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,13 +36,13 @@
                                     <div class="col-lg-6 d-flex justify-content-between mb-2 p-3">
                                         <div class="card">
                                             <ul id="box-audio" class="list-group list-group-flush">
-                                                
+                                            
                                             </ul>
                                         </div>
                                     </div>
                                 <div class="col-lg-6 d-flex justify-content-between mb-2 p-3">
                                     <audio id="myaudio" width="100%" controls>
-                                        <option value="0"></option>
+                                        
                                     </audio>
                                 </div>
                             </div>
@@ -60,7 +66,7 @@
                                     </div>
                                 <div class="col-lg-6 d-flex justify-content-between mb-2 p-3">
                                     <video id="myvideo" width="100%" controls>
-                                        <option value="0"></option>
+                                        
                                     </video>
                                 </div>
                             </div>
@@ -73,11 +79,6 @@
 
     <script>
        
-        function startVideo() {
-            var filmato = "video-link";
-            filmato.attr("src", "assets/video/" + file_v + "'>");
-            filmato.play();
-        }
         $(document)
             .ready(function () {
                 $.ajax({
@@ -88,10 +89,20 @@
                         $.each(data.audio, function (i, el) {
                             var titolo_audio = el.title;
                             var file_a = el.file;
-                            $("#myaudio").append("<source src='assets/audio/" + file_a + "'>");
-                            $("#box-audio").append("<li class='list-group-item' onclick='startAudio'>" + titolo_audio + "</li>");
+                            $("#box-audio").append("<li class='list-group-item'><a href='assets/audio/" + file_a + "'>" + titolo_audio + "</a></li>");
 
+                            $("#box-audio a").click(function(e){
+                                e.preventDefault();
+                                var music = $(this).attr("href");
+                                var myAudio = $("#myaudio");
+                                myAudio.attr("src", music);
+                                document.getElementById("myaudio").play();
+                            });
                         });
+                    },
+                    error: function (error) {
+                        console.log(error.status);
+                    
                     }
                 });
                 $.ajax({
@@ -102,13 +113,22 @@
                         $.each(data.video, function (i, el) {
                             var titolo_video = el.title;
                             var file_v = el.file;
-                            $("#myvideo").append("<source src='assets/video/" + file_v + "'>");
-                            $("#box-video").append("<li class='list-group-item' onclick='startVideo'>" + titolo_video + "</li>");
-                            
+                            $("#box-video").append("<li class='list-group-item'><a href='assets/video/" + file_v + "'>" + titolo_video + "</a></li>");
+
+                            $("#box-video a").click(function(e){
+                                e.preventDefault();
+                                var movie = $(this).attr("href");
+                                var myVideo = $("#myvideo");
+                                myVideo.attr("src", movie);
+                                document.getElementById("myvideo").play();
+                            });
                         });
 
+                    },
+                    error: function (error) {
+                        console.log(error.status);
+                    
                     }
-
                 });
             })
 
