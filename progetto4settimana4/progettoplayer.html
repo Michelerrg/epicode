@@ -57,14 +57,14 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                                    <div class="col-lg-6 d-flex justify-content-between mb-2 p-3">
+                                    <div class="col-lg-6 d-flex justify-content-between mb-2">
                                         <div class="card">
                                             <ul id="box-video" class="list-group list-group-flush">
                                             
                                             </ul>
                                         </div>
                                     </div>
-                                <div class="col-lg-6 d-flex justify-content-between mb-2 p-3">
+                                <div class="col-lg-6 d-flex justify-content-between mb-2">
                                     <video id="myvideo" width="100%" controls>
                                         
                                     </video>
@@ -99,18 +99,8 @@
                                 document.getElementById("myaudio").play();
                             });
                         });
-                    },
-                    error: function (error) {
-                        console.log(error.status);
                     
-                    }
-                });
-                $.ajax({
-                    url: "assets/json/media.json",
-                    type: "GET",
-                    dataType: "json",
-                    success: function (data) {
-                        $.each(data.video, function (i, el) {
+                    $.each(data.video, function (i, el) {
                             var titolo_video = el.title;
                             var file_v = el.file;
                             $("#box-video").append("<li class='list-group-item'><a href='assets/video/" + file_v + "'>" + titolo_video + "</a></li>");
@@ -123,14 +113,13 @@
                                 document.getElementById("myvideo").play();
                             });
                         });
-
                     },
                     error: function (error) {
                         console.log(error.status);
                     
                     }
                 });
-            })
+            });
 
     </script>
 
