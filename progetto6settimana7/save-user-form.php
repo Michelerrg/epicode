@@ -11,7 +11,24 @@
 
 <body class="bg-dark text-light">
 
-    <h2 class="px-5">Registrati! Cosa aspetti?</h2>
+<header>
+    <div class="row shadow p-3 text-center">
+        <div class="col-3">
+            <a href="save-user-form.php" class="btn btn-danger">Login</a>
+        </div>
+        <div class="col-3">
+            <a href="get-users.php" class="btn btn-danger">Utenti</a>
+        </div>
+        <div class="col-3">
+            <a href="save-post-form.php" class="btn btn-danger">Scrivi!</a>
+        </div>
+        <div class="col-3">
+            <a href="get-posts.php" class="btn btn-danger">I Post</a>
+        </div>
+    </div>
+</header>
+
+    <h2 class="px-5 pt-1">Registrati! Cosa aspetti?</h2>
 
     <form action="save-user.php" method="POST" class="p-5">
         <div class="p-2">
@@ -26,7 +43,7 @@
             <button class="btn btn-danger">Registrati</button>
         </div>
     </form>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

@@ -17,6 +17,23 @@
     
 </head>
 <body class="bg-dark text-light">
+    
+<header>
+    <div class="row shadow p-3 text-center">
+        <div class="col-3">
+            <a href="save-user-form.php" class="btn btn-danger">Login</a>
+        </div>
+        <div class="col-3">
+            <a href="get-users.php" class="btn btn-danger">Utenti</a>
+        </div>
+        <div class="col-3">
+            <a href="save-post-form.php" class="btn btn-danger">Scrivi!</a>
+        </div>
+        <div class="col-3">
+            <a href="get-posts.php" class="btn btn-danger">I Post</a>
+        </div>
+    </div>
+</header>
 
     <form action="save-post.php" method="POST" class="container">
         <div class="row p-5">
